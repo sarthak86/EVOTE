@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>E-Voting</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="/images/faces/scaled_logo.png" />
+  <style>
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+
+body {
+  background: #3c8be6;
+  background: linear-gradient(to right, rgb(68, 133, 231), rgb(143, 184, 238));
+}
+
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-img-left {
+  width: 45%;
+  background: scroll center url('https://cdn.pixabay.com/photo/2015/01/08/18/25/startup-593327_960_720.jpg');
+  background-size: cover;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+}
+</style>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["email"].value;
+  var y = document.forms["myForm"]["password"].value;
+  if (x == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  if(y == ""){
+    alert("password must be filled out");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card card-signin flex-row my-5">
+              <div class="card-img-left d-none d-md-flex">
+                 <!-- Background image for card set in CSS! -->
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center">Login</h5>
+                <div class="centered">
+                    <div >
+                      <img src="/images/Vote.jpg" height="80px" width="80px" >  
+                    </div>
+                    <br>
+                    <br>
+                    <h4>Hello! let's get started</h4>
+                    <h6 class="font-weight-light">Login to continue.</h6>
+                    <form class="pt-3" name="myForm"  method="post" action="/s/<%= name %>/login">
+                      <div class="form-group">
+                        <input type="email" class="form-control form-control-lg" id="exampleInputEmail" name="email" placeholder="Username" required>
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control form-control-lg" id="exampleInputPassword" name="password" placeholder="Password" required>
+                      </div>
+                      <div class="mt-3">
+                        <button class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" type="submit">Login</button>
+                        <!-- <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn"  value="Submit" onclick="return validateForm()" href="../PurpleAdmin-Free-Admin-Template-master/main/dashboard.html" >LOGIN</a> -->
+                        <!-- <input type="submit" value="Submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="../PurpleAdmin-Free-Admin-Template-master/main/dashboard.html"> -->
+                      </div>
+                      <div class="my-2 d-flex justify-content-between align-items-center">
+                        <div class="form-check">
+                          <!-- <label class="form-check-label text-muted">
+                            <input type="checkbox" class="form-check-input">
+                             Keep me signed in
+                          </label> -->
+                        </div>
+                      </div>
+                    </form>
+                    <!-- <div class="text-center mt-4 font-weight-light">
+                      Don't have an account? <a href="../../PurpleAdmin-Free-Admin-Template-master/PurpleAdmin-Free-Admin-Template-master/pages/register/register.html" class="text-primary">Create</a>
+                    </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../vendors/js/vendor.bundle.base.js"></script>
+  <script src="../../vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- inject:js -->
+  <script src="../../js/off-canvas.js"></script>
+  <script src="../../js/misc.js"></script>
+  <!-- endinject -->
+</body>
+
+</html>

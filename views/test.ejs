@@ -1,0 +1,263 @@
+<!DOCTYPE html>   
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>E-Voting</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="/node_modules/jqvmap/dist/jqvmap.min.css" />
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="/images/faces/scaled_logo.png" />
+  <style>
+    .tabcontent {
+  float: left;
+  padding: 0px 12px;
+  /* border: 1px solid #ccc; */
+  width: 70%;
+  border-left: none;
+  height: 300px;
+  margin-top: 20px;
+  }
+#demo {
+  text-align: center;
+  font-size: 30px;
+  color: blue;
+  margin-top: 200px;
+}
+</style>
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:/partials/_navbar.html -->
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a href="dashboard.html"><img src="/images/faces/scaled_logo.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="/dashboard.html"><img src="/images/logo-mini.svg" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-stretch">
+        <div class="search-field d-none d-md-block">
+        </div>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <div class="nav-profile-img">
+                <img src="/images/faces/scaled_logo.png" alt="image">
+                <span class="availability-status online"></span>             
+              </div>
+              <div class="nav-profile-text">
+                <p class="mb-1 text-black">CIPL</p>
+              </div>
+            </a>
+            <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/s/<%= name %>/logout">
+                <i class="mdi mdi-logout mr-2 text-primary"></i>
+                Signout
+              </a>
+            </div>
+          </li>
+          <li class="nav-item d-none d-lg-block full-screen-link">
+            <a class="nav-link">
+              <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper" center>
+      <!-- partial:/partials/_sidebar.html -->
+        <p class="sidebar sidebar-offcanvas" id="demo"></p>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title">
+                  <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                    <i class="mdi mdi-account-multiple"></i>                 
+                  </span>
+                  <b>Voting for POST <%= question %></b>
+                  
+                </h3>
+              </div>
+          
+          <!-- <div class="row">
+
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Voting List</h4>
+                  < <table class="table table-striped"> -->
+                    <!-- <div class="row">           -->
+                    
+                    <!-- <tbody> -->
+                      <div id="President" class="row" >
+                        <input type="radio" name="president" id="president" hidden required>
+                        <% Voting.forEach(function(president){ %>
+                          <div class="col-md-4 col-sm-6">
+                                  <!-- <h3>Our Most Popular Campground</h3> -->
+                              <div class="img-thumbnail" >                
+                              <center><img src= "<%= '/images/Candidates/' + president.candidateImage %>"  height="250px" width="250px"></center>
+                              
+                             <center>
+                              <div class="caption">
+                                <h4> <%= president.candidateName %></h4>
+                            </div>
+                            <div>
+                                    <input type="radio" name="president" id="president"  value="<%= president._id %>" > 
+                                  </div>
+                             </center>
+                             <!-- <div -->
+                             <!-- ><%= time.getTime() %></div> -->
+                             <!-- <div><%= time %></div> -->
+                                  </div>
+                                          
+                              </div>         
+                                      <% }); %> 
+                                      <br>
+                                  
+                          </div>
+                          <% if(end == "false"){ %>
+                            <br><br><br>
+                            <Center><input type="submit" class="btn btn-primary" onclick="check1()"></Center>
+                            <!-- <button class="btn btn-primary" onclick="check1()">NEXT</button>                             -->
+                            <!-- <a href="/s/<%= name %>/<%= votingName %>/<%= parseInt(num) + 1 %> " class="btn btn-primary">next </a> -->
+                        <% }else{ %>
+                          <br><br><br>
+                          <center><button class="btn btn-primary" onclick="check2()")>SUBMIT</button>
+                          </center>
+                                  <!-- <a href="/s/<%= name %>/<%= votingName %>/<%= parseInt(num) + 1 %>/['a']" class="btn btn-primary">Submit </a> -->
+                            <% } %>
+                          
+                      
+                      <!-- </tbody>
+                    </table> -->
+                    <!-- <button style="float: right; margin-right: 25%" onclick="display()">neext</button> -->
+                    <!-- </div>
+                    </div>
+                    </div>
+          </div> -->
+        </div>
+        <!-- content-wrapper ends --> 
+        <!-- partial:/partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2019 All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Cognoscente Invnted Pvt. Ltd. <img src="/images/faces/scaled_logo.png" width="16px" height="20px"/></span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    
+    <!-- page-body-wrapper ends -->
+  </div>
+
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+     
+  <script type="text/javascript"> 
+    window.history.forward(); 
+    function noBack() { 
+        window.history.forward(); 
+    } 
+</script>
+  <script>
+    function check1(){ 
+    var ans = confirm("Wanna proceed?")
+    var ele = document.getElementsByName('president'); 
+
+    for(i = 0; i < ele.length; i++) { 
+      if(ele[i].checked) 
+          var a = ele[i].value; 
+      }  
+      
+     if(ans){ 
+            window.open("/s/<%= name %>/<%= votingName %>/<%= parseInt(num) + 1 %>/c/"+a, "_self");
+      }else{ 
+          //Do Nothing
+            
+           }
+         } 
+
+    function check2(){ 
+    var ans = confirm("Wanna proceed?")
+    var ele = document.getElementsByName('president'); 
+
+    for(i = 0; i < ele.length; i++) { 
+      if(ele[i].checked) 
+          var a = ele[i].value; 
+      }  
+     if(ans){ 
+            window.open("/s/<%= name %>/<%= votingName %>/<%= parseInt(num) + 1 %>/final/"+a, "_self");
+      }else{ 
+          //Do Nothing
+            
+           }
+         }
+      </script>
+
+<script>
+  // Set the date we're counting down to
+  // var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+  var countDownDate = "<%= time.getTime() %>";
+  
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+  
+    // Get today's date and time
+    var now = new Date().getTime();
+      
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+      
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s " +"LEFT FOR VOTING";
+      
+    // If the count down is over, write some text 
+    if (distance < 0) {
+      clearInterval(x);
+      window.open("/s/<%= name %>/closed","_self");
+      // document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+  </script>
+
+
+
+  <script src="/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="/js/off-canvas.js"></script>
+  <script src="/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>

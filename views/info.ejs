@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>E-Voting</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="/node_modules/jqvmap/dist/jqvmap.min.css" />
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="/images/faces/scaled_logo.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+    .heading{
+        background: #992877;
+    }
+    h1{
+        text-align: center;
+    }
+    button {
+        background-color: #992877;
+        color:black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 50%;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body style="margin: 0px 80px 0px 80px;">
+  <!-- <div class="container-scroller"> -->
+    <!-- partial:/partials/_navbar.html -->
+   
+    <!-- partial -->
+    <!-- <div class="container-fluid page-body-wrapper"> -->
+      <!-- partial:/partials/_sidebar.html -->
+      <!-- <p class="sidebar sidebar-offcanvas" id="demo"></p> -->
+
+      <div align="center" style="border:1px solid" class="heading" >
+        <br>
+        <img src="assets/img/irialogo.png" alt="logo" width="80px" height="80px"><br>
+        <p><b>IRIA E-VOTING</b></p>
+        </div>
+    
+            <h1>General Instructions</h1>
+            <div align="center">
+            <h4>Please read the instruction carefully</h4>
+            <h4 >
+            <strong><u>General Instructions:</u></strong>
+            </h4>
+        </div>
+            <li>
+                Polls timming will be running on the side bar.
+                </li>
+                <br>
+            <li>
+            Sample procedure to vote will be posted in the panel for your information.
+            </li><br>
+            <li>
+            When you enter the polling panel, and before being admitted to the
+            voting equipment, you are required to identify yourself.
+            </li><br>
+            <li>
+            Elections officers will inform you as to the manner of voting on
+            the voting equipment if requested. After election officers have given
+            instructions, and before you register your vote, the officers
+            assisting you shall retire and you shall then cast your vote in secret.
+            </li><br>
+            <li>
+            You are entitled the time that mention in the side bar for voting.
+            </li><br>
+            <li>
+            After casting your vote you are required to leave the polling room at once
+            and shall not be permitted to re-enter once the timming is over.
+            </li>
+            <li>
+            The election commity possesses full authority to maintain order.
+            </li>
+            <li>
+                Elections officers will inform you as to the manner of voting on
+                the voting equipment if requested. After election officers have given
+                instructions, and before you register your vote, the officers
+                assisting you shall retire and you shall then cast your vote in secret.
+                </li><br>
+                <li>
+                You are entitled the time that mention in the side bar for voting.
+                </li><br>
+                <li>
+                After casting your vote you are required to leave the polling room at once
+                and shall not be permitted to re-enter once the timming is over.
+                </li>
+                <li>
+                The election commity possesses full authority to maintain order.
+                </li>
+        <br><br><br>
+
+            <form >
+                
+                <!-- <p><input type="submit" ></p> -->
+                <div style="text-align:center;">
+                  <p><input type="checkbox" id="terms" required >I accept the <u>Terms and Conditions</u></p>
+                <button type="button" onclick="checkForm()">Proceed</button><br>
+            </div>
+            </form>
+            <script>
+              
+                function checkForm(){
+                
+                  if(document.getElementById("terms").checked) {
+                    //form.terms.focus();
+                    window.open('/s/<%= name %>/CoOperatiove/0','_self');
+                    
+                  }else{
+                    alert("Please indicate that you accept the Terms and Conditions");
+                  } 
+                }
+              </script>
+
+
+
+
+
+
+
+      
+      <!-- partial -->
+      
+      <!-- main-panel ends -->
+    <!-- </div> -->
+    <!-- page-body-wrapper ends -->
+  <!-- </div> -->
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="/js/off-canvas.js"></script>
+  <script src="/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>
